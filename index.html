@@ -10,23 +10,76 @@
   <title>Pokedex</title>
 
 </head>
+
 <body>
-  
+
   <h1 class="title">Who's That Pokemon?</h1>
 
+  <!-- en HTML se utiliza "form" para recopilar el "input" o entrada del usuario
+  El input del user se envía con mayor frecuencia a un servidor para su procesamiento.
+  "form" es un elemento contenedor para diferentes tipos de inputs, como: campos de texto, casillas de verificación, botones envío,etc-->
   <form id="form" action="" onsubmit="searchPokemon(event)">
+    <!--Al apretar enter llamaremos a "onsubmit" que llamará a la funcion "searchPokemons" en nuestro js-->
     <input type="text" name="pokemon" placeholder="Find Your Pokemon" autocomplete="off">
+    <!--En el input le ponemos el tipo, en este caso text al ser un texto y un nombre "pokemon" para después buscar el valor que tenga 
+    y con "autocomplete off" evitamos que nos salga el historial de búsquedas en el input cada vez que escribamos algo-->
     <button id="search">Pokedex</button>
 
-    <section data-pokemon-card class="pokemon-card">
-      <div data-pokemon-name></div>
-      <div data-pokemon-img-container class="img-container">
-        <img data-pokemon-img class="pokemon-img" src="./shadow.png">
-      </div>
-      <div data-pokemon-id></div>
-      <div data-pokemon-types class="pokemon-types"></div>
-      <div data-pokemon-stats class="pokemon-stats"></div>
-    </section>
+    <table>
+      <thead>
+        <tr>
+          <!-- Al insertar una tabla en HTML dividiremos el contenido de nuestra Pokedex, en este caso en el "thead" que sería el header de la tabla
+          añadiremos los nombres de las distintas columnas, las cuales tendrán la información, mediante "th"-->
+          <th colspan="1">Pokedex</th>
+          <th>Name</th>
+          <th>Nº</th>
+          <th>Type</th>
+          <th>Stats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Este es el body de nuestra tabla y por tanto aquí añadiremos el contenido que llamamos con js-->
+        <tr>
+
+          <section data-pokemon-card class="pokemon-card">
+            <!--Aquí dentro irá todo el contenido de la card, nuestra pokedex-->
+            <!-- Los atributos "data" son para seleccionar los elementos, buscarlos y utilizarlos dentro de nuestro js, por tanto, pondremos "data" en todos nuestros elementos-->
+
+            <td>
+              <!-- A partir de aquí dividiremos los contenidos de la tabla del "tbody" con la etiqueta "td", section queda fuera-->
+              <div data-pokemon-img-container class="img-container"></div>
+              <!-- Este data será el que llame el contenedor que llevará la imagen del Pokemon-->
+              <img data-pokemon-img class="pokemon-img" src="./shadow.png">
+              <!-- Este data será el que llame a la imagen que se encuentra dentro de nuestro contenedor -->
+              </div>
+            </td>
+
+            <td>
+              <div data-pokemon-name></div>
+              <!-- Este data será el que llame el nombre del Pokemon-->
+            </td>
+
+            <td>
+              <div data-pokemon-id></div>
+              <!-- Este data será el que llame el Id del Pokemon-->
+            </td>
+
+            <td>
+              <div data-pokemon-types class="pokemon-types"></div>
+              <!-- Este data será el que llame al tipo al cual pertenece el Pokemon-->
+            </td>
+
+            <td>
+              <div data-pokemon-stats class="pokemon-stats"></div>
+              <!-- Este data será el que llame a los stats del Pokemon-->
+            </td>
+
+          </section>
+
+        </tr>
+      <tbody>
+    </table>
+
     <script src="./index.js"></script>
 </body>
 
