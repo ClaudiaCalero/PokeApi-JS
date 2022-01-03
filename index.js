@@ -1,13 +1,13 @@
 //Con document.querySelector selecciono cada uno de las "data" nombrados en el HTML
 // De esta manera selecciono todo y cada uno de los elementos que utilizaré en el "file" de JS
-const pokemonCard = document.querySelector('[data-pokemon-card]');
-const pokemonName = document.querySelector('[data-pokemon-name]');
-const pokemonImg = document.querySelector('[data-pokemon-img]');
-const pokemonImgContainer = document.querySelector('[data-pokemon-img-container]');
-const pokemonId = document.querySelector('[data-pokemon-id]');
-const pokemonTypes = document.querySelector('[data-pokemon-types]');
-const pokemonStats = document.querySelector('[data-pokemon-stats]');
-const pokemonAbilities = document.querySelector('[data-pokemon-abilities]');
+const pokemonCard = document.querySelector('[pokemon-card]');
+const pokemonName = document.querySelector('[pokemon-name]');
+const pokemonImg = document.querySelector('[pokemon-img]');
+const pokemonImgContainer = document.querySelector('[pokemon-img-container]');
+const pokemonId = document.querySelector('[pokemon-id]');
+const pokemonTypes = document.querySelector('[pokemon-types]');
+const pokemonStats = document.querySelector('[pokemon-stats]');
+const pokemonAbilities = document.querySelector('[pokemon-abilities]');
 
 //Primero llamo la funcion "searchPokemon" que es la que se va a llamar en el "onsubmit" del "form" en el momento que se ingrese algo en el "input"
 const searchPokemon = event => {
