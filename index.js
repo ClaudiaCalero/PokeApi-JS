@@ -7,6 +7,12 @@ const pokemonImgContainer = document.querySelector('[pokemon-img-container]');
 const pokemonId = document.querySelector('[pokemon-id]');
 const pokemonTypes = document.querySelector('[pokemon-types]');
 const pokemonStats = document.querySelector('[pokemon-stats]');
+const pokemonHp = document.querySelector('[pokemon-hp]');
+const pokemonAttack = document.querySelector('[pokemon-attack');
+const pokemonSpecialAttack = document.querySelector('[pokemon-special-attack');
+const pokemonDefense = document.querySelector('[pokemon-defense');
+const pokemonSpecialDefense = document.querySelector('[pokemon-special-defense');
+const pokemonSpeed = document.querySelector('[pokemon-speed');
 const pokemonAbilities = document.querySelector('[pokemon-abilities]');
 
 //Primero llamo la funcion "searchPokemon" que es la que se va a llamar en el "onsubmit" del "form" en el momento que se ingrese algo en el "input"
@@ -40,7 +46,14 @@ const renderPokemonData = data => {
     //Todos estos elementos son los que están arriba con const
     renderPokemonTypes(types);
     renderPokemonStats(stats);
+    renderPokemonHp(stats);
     renderPokemonAbilities(abilities);
+    renderPokemonAttack(stats);
+    renderPokemonSpecialAttack(stats);
+    renderPokemonDefense(stats);
+    renderPokemonSpecialDefense(stats);
+    renderPokemonSpeed(stats);
+    renderPokemonSpecialAttack(stats);
     //El proposito de estas dos variables es mostrar el código HTML especificado dentro del elemento HTML especificado. 
     //En el método render (), podemos leer accesorios, declarar y devolver nuestro código JSX a los campos r, casillas de verificación, botones de envío, etc.
 }
@@ -69,29 +82,84 @@ const renderPokemonStats = stats => {
     //Se borra la información de la anterior búsqueda y se iterará en cada "stats" mostrando sólo la nueva información acorde a la nueava búsqueda
     stats.forEach(stat => {
         //statElement para guardar dos elementos dentro
-        const statElement = document.createElement("div");
-        const statElementName = document.createElement("div");
         //Amount cantidad de la "stat"
         const statElementAmount = document.createElement("div");
-        statElementName.textContent = stat.stat.name;
         statElementAmount.textContent = stat.base_stat;
-        statElement.appendChild(statElementName);
-        statElement.appendChild(statElementAmount);
-        pokemonStats.appendChild(statElement);
+        pokemonStats.appendChild(statElementAmount);
+    });
+}
+const renderPokemonHp = hp => {
+
+    pokemonHp.innerHTML = '';
+    hp.forEach(hp => {
+
+        const hpElementAmount = document.createElement("div");
+        hpElementAmount.textContent = hp.base_stat;
+        pokemonHp.appendChild(hpElementAmount);
+    });
+}
+
+const renderPokemonAttack = attack => {
+
+    pokemonAttack.innerHTML = '';
+    attack.forEach(attack => {
+
+        const attackElementAmount = document.createElement("div");
+        attackElementAmount.textContent = attack.base_stat;
+        pokemonAttack.appendChild(attackElementAmount);
+    });
+}
+
+const renderPokemonSpecialAttack = specialAttack => {
+
+    pokemonSpecialAttack.innerHTML = '';
+    specialAttack.forEach(specialAttack => {
+
+        const specialAttackElementAmount = document.createElement("div");
+        specialAttackElementAmount.textContent = specialAttack.base_stat;
+        pokemonSpecialAttack.appendChild(specialAttackElementAmount);
     });
 }
 
 
+const renderPokemonDefense = defense => {
+
+    pokemonDefense.innerHTML = '';
+    defense.forEach(defense => {
+
+        const defenseElementAmount = document.createElement("div");
+        defenseElementAmount.textContent = defense.base_stat;
+        pokemonDefense.appendChild(defenseElementAmount);
+    });
+}
+const renderPokemonSpecialDefense = specialAttack => {
+
+    pokemonSpecialAttack.innerHTML = '';
+    specialAttack.forEach(specialDefense => {
+    
+        const specialDefenseElementAmount = document.createElement("div");
+        specialDefenseElementAmount.textContent = specialDefense.base_stat;
+        pokemonSpecialDefense.appendChild(specialDefenseElementAmount);
+    });
+}
+const renderPokemonSpeed = speed => {
+
+    pokemonSpeed.innerHTML = '';
+    speed.forEach(speed => {
+
+        const speedElementAmount = document.createElement("div");
+
+        speedElementAmount.textContent = speed.base_stat;
+        pokemonSpeed.appendChild(speedElementAmount);
+    });
+}
+
 
 const renderPokemonAbilities = abilities => {
     pokemonAbilities.innerHTML = '';
-    //Por cada uno de los tipos que recibe, puede ser uno o dos, se intengran con los "types.forEach" seleccionando nuestro "type"
     abilities.forEach(ability => {
-        //Se crea un elemento al cual le pondremos un "typeTextElement" para crear un div
         const typeTextElement = document.createElement("div");
         typeTextElement.textContent = ability.ability.name;
-        //appendChild insertar un elemento HTML creado con JS, es decir, se inserta el ese "div"
-        //si el pokeon tiene un "type" se imprimirá uno y de igual manera si tien dos, se imprimirán dos
         pokemonAbilities.appendChild(typeTextElement);
 
     });

@@ -47,43 +47,40 @@
       </thead>
       <tbody>
         <!-- Este es el body de nuestra tabla y por tanto aquí añadiremos el contenido que llamamos con js-->
-        <tr>
+        <tr pokemon-card class="pokemon-card">
+          <!--Aquí dentro irá todo el contenido de la card, nuestra pokedex-->
+          <!-- Los atributos "data" son para seleccionar los elementos, buscarlos y utilizarlos dentro de nuestro js, por tanto, pondremos "data" en todos nuestros elementos-->
 
-          <div data-pokemon-card class="pokemon-card"></div>
-            <!--Aquí dentro irá todo el contenido de la card, nuestra pokedex-->
-            <!-- Los atributos "data" son para seleccionar los elementos, buscarlos y utilizarlos dentro de nuestro js, por tanto, pondremos "data" en todos nuestros elementos-->
+          <td>
+            <!-- A partir de aquí dividiremos los contenidos de la tabla del "tbody" con la etiqueta "td", section queda fuera-->
+            <div pokemon-img-container class="img-container"></div>
+            <!-- Este data será el que llame el contenedor que llevará la imagen del Pokemon-->
+            <img pokemon-img class="pokemon-img" src="./shadow.png">
+            <!-- Este data será el que llame a la imagen que se encuentra dentro de nuestro contenedor -->
+            </div>
+          </td>
 
-            <td>
-              <!-- A partir de aquí dividiremos los contenidos de la tabla del "tbody" con la etiqueta "td", section queda fuera-->
-              <div pokemon-img-container class="img-container"></div>
-              <!-- Este data será el que llame el contenedor que llevará la imagen del Pokemon-->
-              <img pokemon-img class="pokemon-img" src="./shadow.png">
-              <!-- Este data será el que llame a la imagen que se encuentra dentro de nuestro contenedor -->
-              </div>
-            </td>
+          <!-- Este data será el que llame el nombre del Pokemon-->
+          <td pokemon-name></td>
 
-             <!-- Este data será el que llame el nombre del Pokemon-->
-            <td pokemon-name></td>
+          <!-- Este data será el que llame el Id del Pokemon-->
+          <td pokemon-id></td>
 
-            <!-- Este data será el que llame el Id del Pokemon-->
-            <td pokemon-id></td>
+          <!-- Este data será el que llame al tipo al cual pertenece el Pokemon-->
+          <td pokemon-types class="pokemon-types"></td>
 
-            <!-- Este data será el que llame al tipo al cual pertenece el Pokemon-->
-            <td pokemon-types class="pokemon-types"></td>
 
-            
-            <td pokemon-abilities class="pokemon-abilities"></td>
-            
-            <!-- Este data será el que llame a los stats del Pokemon-->
-            <tdd pokemon-stats class="pokemon-stats">
+          <td pokemon-abilities class="pokemon-abilities"></td>
+
+          <!-- Este data será el que llame a los stats del Pokemon-->
+            <td pokemon-stats class="pokemon-stats"></td>
             <td pokemon-hp class="pokemon-hp"></td>
             <td pokemon-attack class="pokemon-attack"></td>
-            <td pokemon-stats class="pokemon-special-attack"></td>
-            <td pokemon-stats class="pokemon-defense"></td>
-            <td pokemon-stats class="pokemon-stats-special-defense"></td>
-            <td pokemon-stats class="pokemon-speed"></td>
+            <td pokemon-special-attack class="pokemon-special-attack"></td>
+            <td pokemon-defense class="pokemon-defense"></td>
+            <td pokemon-special-defense class="pokemon-stats-special-defense"></td>
+            <td pokemon-speed class="pokemon-speed"></td>
 
-          </td>
 
 
 
