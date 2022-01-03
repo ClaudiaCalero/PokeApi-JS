@@ -6,8 +6,7 @@ h1 {
 form {
   width: 200px;
   margin: 20px auto;
-  display: flex;
-  flex-direction: row;
+
 
 }
 
@@ -17,9 +16,17 @@ input {
 }
 
 button {
-  width: 100%;
+  width: 70%;
   height: 70%;
- margin-left: 8px;
+
+}
+
+table {
+  margin-top: 60px;
+  display: flexbox;
+  justify-content: center;
+ align-items: center;
+
 }
 
 table,
@@ -32,4 +39,5 @@ thead,
 tfoot {
     background-color: #333;
     color: #fff;
+  
 }
