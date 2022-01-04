@@ -3,41 +3,19 @@ h1 {
   justify-content: center;
   }
 
-form {
-  width: 200px;
-  margin: 20px auto;
 
-
+table, th, td {
+  margin-top: 4%;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
-input {
-  width: fit-content;
-  height: 70%;
+th, td {
+  padding: 3px;
+  text-align: center;
 }
 
-button {
-  width: 70%;
-  height: 70%;
-
+#form {
+  margin-bottom: 25px;
 }
 
-table {
-  margin-top: 60px;
-  display: flexbox;
-  justify-content: center;
- align-items: center;
-
-}
-
-table,
-td {
-  align-items: center;
-    border: 1px solid #333;
-}
-
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
-  
-}

@@ -1,94 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./index.css" />
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
-
+  <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-
-  <h1 class="title">Who's That Pokemon?</h1>
-
-  <!-- en HTML se utiliza "form" para recopilar el "input" o entrada del usuario
+   <!-- en HTML se utiliza "form" para recopilar el "input" o entrada del usuario
   El input del user se envía con mayor frecuencia a un servidor para su procesamiento.
   "form" es un elemento contenedor para diferentes tipos de inputs, como: campos de texto, casillas de verificación, botones envío,etc-->
-  <form id="form" action="" onsubmit="searchPokemon(event)">
-    <!--Al apretar enter llamaremos a "onsubmit" que llamará a la funcion "searchPokemons" en nuestro js-->
-    <input type="text" name="pokemon" placeholder="Find Your Pokemon" autocomplete="off">
-    <!--En el input le ponemos el tipo, en este caso text al ser un texto y un nombre "pokemon" para después buscar el valor que tenga 
-    y con "autocomplete off" evitamos que nos salga el historial de búsquedas en el input cada vez que escribamos algo-->
-    <button id="search">Pokedex</button>
-
-    <table>
-      <thead>
-        <tr>
-          <!-- Al insertar una tabla en HTML dividiremos el contenido de nuestra Pokedex, en este caso en el "thead" que sería el header de la tabla
-          añadiremos los nombres de las distintas columnas, las cuales tendrán la información, mediante "th"-->
-          <th colspan="1">Pokedex</th>
-          <th>Name</th>
-          <th>Nº</th>
-          <th>Type</th>
-          <th>Abilities</th>
-          <th>Stats
-          <th>HP</th>
-          <th>Attack</th>
-          <th>Special Attack</th>
-          <th>Defense</th>
-          <th>Special Defense</th>
-          <th>Speed</th>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Este es el body de nuestra tabla y por tanto aquí añadiremos el contenido que llamamos con js-->
-        <tr pokemon-card class="pokemon-card">
-          <!--Aquí dentro irá todo el contenido de la card, nuestra pokedex-->
-          <!-- Los atributos "data" son para seleccionar los elementos, buscarlos y utilizarlos dentro de nuestro js, por tanto, pondremos "data" en todos nuestros elementos-->
-
-          <td>
-            <!-- A partir de aquí dividiremos los contenidos de la tabla del "tbody" con la etiqueta "td", section queda fuera-->
-            <div pokemon-img-container class="img-container"></div>
-            <!-- Este data será el que llame el contenedor que llevará la imagen del Pokemon-->
-            <img pokemon-img class="pokemon-img" src="./shadow.png">
-            <!-- Este data será el que llame a la imagen que se encuentra dentro de nuestro contenedor -->
-            </div>
-          </td>
-
-          <!-- Este data será el que llame el nombre del Pokemon-->
-          <td pokemon-name></td>
-
-          <!-- Este data será el que llame el Id del Pokemon-->
-          <td pokemon-id></td>
-
-          <!-- Este data será el que llame al tipo al cual pertenece el Pokemon-->
-          <td pokemon-types class="pokemon-types"></td>
-
-
-          <td pokemon-abilities class="pokemon-abilities"></td>
-
-          <!-- Este data será el que llame a los stats del Pokemon-->
-            <td pokemon-stats class="pokemon-stats"></td>
-            <td pokemon-hp class="pokemon-hp"></td>
-            <td pokemon-attack class="pokemon-attack"></td>
-            <td pokemon-special-attack class="pokemon-special-attack"></td>
-            <td pokemon-defense class="pokemon-defense"></td>
-            <td pokemon-special-defense class="pokemon-stats-special-defense"></td>
-            <td pokemon-speed class="pokemon-speed"></td>
-
-
-
-
-        </tr>
-      <tbody>
-    </table>
-
-    <script src="./index.js"></script>
+  <div id="form">
+    <input type="text" id="search"></input>
+    <button onclick="search()">Search</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Types</th>
+        <th>Abilities</th>
+        <th>HP</th>
+        <th>Attack</th>
+        <th>Defense</th>
+        <th>Special Attack</th>
+        <th>Special Defense</th>
+        <th>Speed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td><img id="image" src=""/></td>
+          <td id="name"></td>
+          <td id="types"></td>
+          <td id="abilities"></td>
+          <td id="hp"></td>
+          <td id="attack"></td>
+          <td id="defense"></td>
+          <td id="special-attack"></td>
+          <td id="special-defense"></td>
+          <td id="speed"></td>
+      </tr>
+  </tbody>
+  </table>
+  <script src="./index.js"></script>
 </body>
-
 </html>
+
